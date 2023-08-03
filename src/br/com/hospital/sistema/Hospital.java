@@ -2,7 +2,7 @@ package br.com.hospital.sistema;
 
 import br.com.hospital.colaboradores.*;
 import br.com.hospital.pessoas.*;
-import br.com.hospital.telas.LoginFrame;
+import br.com.hospital.telas.TelaLogin;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -599,8 +599,8 @@ public class Hospital {
          * senha: senha
          */
         SwingUtilities.invokeLater(() -> {
-            LoginFrame loginFrame = new LoginFrame();
-            loginFrame.setVisible(true);
+            TelaLogin telaLogin = new TelaLogin();
+            telaLogin.setVisible(true);
         });
     }
 }
