@@ -97,14 +97,12 @@ public class LoginFrame extends JFrame {
                 }
 
                 if (autenticado) {
-                    // Chama o método menu() da classe Hospital após o login bem-sucedido
-                    Hospital.menu();
+                    // Cria uma nova instância da classe MenuInicialFrame e torna-a visível.
+                    MenuInicialFrame menuFrame = new MenuInicialFrame();
+                    menuFrame.setVisible(true);
 
-                    // Torna a janela de login invisível
+                    // Tela Login fica invisível
                     setVisible(false);
-
-                    // Fecha automaticamente a janela de login após o login bem-sucedido.
-                    dispose();
                 } else {
                     JOptionPane.showMessageDialog(LoginFrame.this, "Usuário ou Senha incorretos!");
                 }
