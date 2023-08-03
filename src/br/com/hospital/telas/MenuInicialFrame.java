@@ -10,7 +10,7 @@ public class MenuInicialFrame extends JFrame {
     public MenuInicialFrame() {
         setTitle("Menu Inicial");
         setDefaultCloseOperation(EXIT_ON_CLOSE);
-        setSize(300, 200);
+        setSize(500, 300);
         setLocationRelativeTo(null);
 
         initComponents();
@@ -31,9 +31,35 @@ public class MenuInicialFrame extends JFrame {
             }
         });
 
+        JButton menuPacienteButton = new JButton("Pacientes");
+        menuPacienteButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent event) {
+                // Aqui voce pode abrir o submenu desejado, por exemplo, uma nova janela com outras ações
+                JOptionPane.showMessageDialog(MenuInicialFrame.this, "Abrindo submenu...");
+            }
+        });
+
+        JButton menuColaboradoresButton = new JButton("Colaboradores");
+        menuColaboradoresButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent event) {
+                // Aqui voce pode abrir o submenu desejado, por exemplo, uma nova janela com outras ações
+                JOptionPane.showMessageDialog(MenuInicialFrame.this, "Abrindo submenu...");
+            }
+        });
+
         constraints.gridx = 0;
         constraints.gridy = 0;
         panel.add(submenuButton, constraints);
+
+        constraints.gridx = 0;
+        constraints.gridy = 1;
+        panel.add(menuPacienteButton, constraints);
+
+        constraints.gridx = 0;
+        constraints.gridy = 2;
+        panel.add(menuColaboradoresButton, constraints);
 
         // Botão que encerra o sistema
         JButton encerrarButton = new JButton("Encerrar Sistema");
@@ -46,7 +72,7 @@ public class MenuInicialFrame extends JFrame {
             }
         });
         constraints.gridx = 0;
-        constraints.gridy = 1;
+        constraints.gridy = 3;
         panel.add(encerrarButton, constraints);
 
         add(panel);
