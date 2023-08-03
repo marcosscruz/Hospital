@@ -5,8 +5,14 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+/**
+ * Representa a tela do menu inicial da aplicação.
+ */
 public class MenuInicialFrame extends JFrame {
 
+    /**
+     * Cria uma nova instância da tela do menu inicial.
+     */
     public MenuInicialFrame() {
         setTitle("Menu Inicial");
         setDefaultCloseOperation(EXIT_ON_CLOSE);
@@ -16,6 +22,9 @@ public class MenuInicialFrame extends JFrame {
         initComponents();
     }
 
+    /**
+     * Inicializa e configura os componentes da janela do menu inicial.
+     */
     private void initComponents() {
         JPanel panel = new JPanel(new GridBagLayout());
         GridBagConstraints constraints = new GridBagConstraints();
@@ -76,5 +85,15 @@ public class MenuInicialFrame extends JFrame {
         panel.add(encerrarButton, constraints);
 
         add(panel);
+    }
+
+    /**
+     * Sobrescrita do método toString para a tela do menu inicial.
+     *
+     * @return Uma representação da tela do menu inicial em formato de String.
+     */
+    @Override
+    public String toString() {
+        return "MenuInicialFrame";
     }
 }
