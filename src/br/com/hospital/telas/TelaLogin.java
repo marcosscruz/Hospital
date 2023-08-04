@@ -1,7 +1,6 @@
 package br.com.hospital.telas;
 
 import br.com.hospital.colaboradores.Usuario;
-import br.com.hospital.sistema.Hospital;
 import java.util.ArrayList;
 import javax.swing.JOptionPane;
 
@@ -122,9 +121,11 @@ public class TelaLogin extends javax.swing.JFrame {
         }
         
         if(autiticado){
-            Hospital.menu();
+            TelaPrincipal principal = new TelaPrincipal();
+            principal.setVisible(true);
             
             setVisible(false);
+            dispose();
         } else {
             JOptionPane.showMessageDialog(TelaLogin.this, "Usuário ou Senha inconrretos!");
         }
