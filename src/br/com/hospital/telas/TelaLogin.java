@@ -43,14 +43,18 @@ public class TelaLogin extends javax.swing.JFrame {
 
         textSenha.setText("Senha:");
 
+        loginButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/hospital/imagens/entrar_sistema.png"))); // NOI18N
         loginButton.setText("Entrar");
+        loginButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         loginButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 loginButtonActionPerformed(evt);
             }
         });
 
+        sairButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/hospital/imagens/sair_sistema.png"))); // NOI18N
         sairButton.setText("Sair");
+        sairButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         sairButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 sairButtonActionPerformed(evt);
