@@ -420,6 +420,7 @@ public class Hospital {
                 case 4: {
                     System.out.println("============================================= \nFinalizando...");
                     finalizar = true; // Sai do loop e finaliza o sistema.
+                    System.exit(0);
                     break;
                 }
                 default:
