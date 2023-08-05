@@ -27,8 +27,8 @@ public class TelaLogin extends javax.swing.JFrame {
         usuarioLogin = new javax.swing.JTextField();
         textSenha = new javax.swing.JLabel();
         usuarioSenha = new javax.swing.JPasswordField();
-        loginButton = new javax.swing.JButton();
         sairButton = new javax.swing.JButton();
+        loginButton = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Tela de Login");
@@ -45,21 +45,20 @@ public class TelaLogin extends javax.swing.JFrame {
 
         textSenha.setText("Senha:");
 
-        loginButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/hospital/imagens/entrar_sistema.png"))); // NOI18N
-        loginButton.setText("Entrar");
-        loginButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        loginButton.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                loginButtonActionPerformed(evt);
-            }
-        });
-
         sairButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/hospital/imagens/sair_sistema.png"))); // NOI18N
         sairButton.setText("Sair");
         sairButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         sairButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 sairButtonActionPerformed(evt);
+            }
+        });
+
+        loginButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/hospital/imagens/entrar_sistema.png"))); // NOI18N
+        loginButton.setText("Entrar");
+        loginButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                loginButtonActionPerformed(evt);
             }
         });
 
@@ -76,7 +75,7 @@ public class TelaLogin extends javax.swing.JFrame {
                     .addComponent(usuarioLogin)
                     .addComponent(textSenha)
                     .addComponent(usuarioSenha)
-                    .addGroup(layout.createSequentialGroup()
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addComponent(loginButton, javax.swing.GroupLayout.PREFERRED_SIZE, 82, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(sairButton, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)))
@@ -100,8 +99,8 @@ public class TelaLogin extends javax.swing.JFrame {
                         .addComponent(usuarioSenha, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(loginButton)
-                            .addComponent(sairButton))))
+                            .addComponent(sairButton)
+                            .addComponent(loginButton))))
                 .addContainerGap(81, Short.MAX_VALUE))
         );
 
@@ -109,7 +108,7 @@ public class TelaLogin extends javax.swing.JFrame {
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void loginButtonActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_loginButtonActionPerformed
+    private void loginButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_loginButtonActionPerformed
         // TODO add your handling code here:
         String nomeUser = usuarioLogin.getText();
         char[] senhaUser = usuarioSenha.getPassword();
@@ -135,7 +134,8 @@ public class TelaLogin extends javax.swing.JFrame {
         } else {
             JOptionPane.showMessageDialog(TelaLogin.this, "Usuário ou Senha inconrretos!");
         }
-    }// GEN-LAST:event_loginButtonActionPerformed
+    }//GEN-LAST:event_loginButtonActionPerformed
+
 
     private void sairButtonActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_sairButtonActionPerformed
         // TODO add your handling code here:
