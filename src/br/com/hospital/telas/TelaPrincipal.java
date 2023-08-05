@@ -1,40 +1,90 @@
 package br.com.hospital.telas;
 
+import br.com.hospital.telas.paciente.CadastroPaciente;
 import br.com.hospital.telas.paciente.ListaPaciente;
 
 public class TelaPrincipal extends javax.swing.JFrame {
 
     public TelaPrincipal() {
         initComponents();
+        setExtendedState(MAXIMIZED_BOTH);
     }
 
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jInternalFrame1 = new javax.swing.JInternalFrame();
+        jLayeredPane1 = new javax.swing.JLayeredPane();
+        jTabbedPane1 = new javax.swing.JTabbedPane();
+        jPopupMenu1 = new javax.swing.JPopupMenu();
+        menuInterno = new javax.swing.JDesktopPane();
+        planoFundo = new javax.swing.JLabel();
         jMenuBar1 = new javax.swing.JMenuBar();
         menuCadastros = new javax.swing.JMenu();
         menuPacientes = new javax.swing.JMenu();
-        menuListaPacientes = new javax.swing.JMenuItem();
         menuCadastroPacientes = new javax.swing.JMenuItem();
         menuEditarPacientes = new javax.swing.JMenuItem();
         menuExcluirPacientes = new javax.swing.JMenuItem();
         menuColaboradores = new javax.swing.JMenu();
-        menuListaColaboradores = new javax.swing.JMenuItem();
         menuCadastroColaboradores = new javax.swing.JMenuItem();
         menuEditarColaboradores = new javax.swing.JMenuItem();
         menuExcluirColaboradores = new javax.swing.JMenuItem();
         menuFerramentas = new javax.swing.JMenu();
+        jMenuItem1 = new javax.swing.JMenuItem();
         menuOrdenar = new javax.swing.JMenuItem();
         menuProntuarios = new javax.swing.JMenu();
         menuOpcao = new javax.swing.JMenu();
         trocarUsuario = new javax.swing.JMenuItem();
         encerrarSistema = new javax.swing.JMenuItem();
 
+        jInternalFrame1.setVisible(true);
+
+        javax.swing.GroupLayout jInternalFrame1Layout = new javax.swing.GroupLayout(jInternalFrame1.getContentPane());
+        jInternalFrame1.getContentPane().setLayout(jInternalFrame1Layout);
+        jInternalFrame1Layout.setHorizontalGroup(
+            jInternalFrame1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 0, Short.MAX_VALUE)
+        );
+        jInternalFrame1Layout.setVerticalGroup(
+            jInternalFrame1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 4, Short.MAX_VALUE)
+        );
+
+        javax.swing.GroupLayout jLayeredPane1Layout = new javax.swing.GroupLayout(jLayeredPane1);
+        jLayeredPane1.setLayout(jLayeredPane1Layout);
+        jLayeredPane1Layout.setHorizontalGroup(
+            jLayeredPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 100, Short.MAX_VALUE)
+        );
+        jLayeredPane1Layout.setVerticalGroup(
+            jLayeredPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 100, Short.MAX_VALUE)
+        );
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Tela Principal");
+        setBackground(new java.awt.Color(153, 255, 255));
         setMinimumSize(new java.awt.Dimension(900, 450));
         setResizable(false);
+
+        planoFundo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/hospital/imagens/plano_fundo_2.png"))); // NOI18N
+
+        javax.swing.GroupLayout menuInternoLayout = new javax.swing.GroupLayout(menuInterno);
+        menuInterno.setLayout(menuInternoLayout);
+        menuInternoLayout.setHorizontalGroup(
+            menuInternoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(menuInternoLayout.createSequentialGroup()
+                .addComponent(planoFundo)
+                .addGap(0, 0, Short.MAX_VALUE))
+        );
+        menuInternoLayout.setVerticalGroup(
+            menuInternoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(menuInternoLayout.createSequentialGroup()
+                .addComponent(planoFundo)
+                .addGap(0, 0, Short.MAX_VALUE))
+        );
+        menuInterno.setLayer(planoFundo, javax.swing.JLayeredPane.DEFAULT_LAYER);
 
         menuCadastros.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/hospital/imagens/cadastros_pacientes_colab.png"))); // NOI18N
         menuCadastros.setText("Cadastros     ");
@@ -42,16 +92,6 @@ public class TelaPrincipal extends javax.swing.JFrame {
 
         menuPacientes.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/hospital/imagens/pacientes.png"))); // NOI18N
         menuPacientes.setText("Pacientes");
-
-        menuListaPacientes.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/hospital/imagens/lista_all.png"))); // NOI18N
-        menuListaPacientes.setText("Lista de Pacientes");
-        menuListaPacientes.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        menuListaPacientes.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                menuListaPacientesActionPerformed(evt);
-            }
-        });
-        menuPacientes.add(menuListaPacientes);
 
         menuCadastroPacientes.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/hospital/imagens/cadastrar.png"))); // NOI18N
         menuCadastroPacientes.setText("Cadastrar");
@@ -77,11 +117,6 @@ public class TelaPrincipal extends javax.swing.JFrame {
 
         menuColaboradores.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/hospital/imagens/collaborator.png"))); // NOI18N
         menuColaboradores.setText("Colaboradores");
-
-        menuListaColaboradores.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/hospital/imagens/lista_all.png"))); // NOI18N
-        menuListaColaboradores.setText("Lista de Colaboradores");
-        menuListaColaboradores.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        menuColaboradores.add(menuListaColaboradores);
 
         menuCadastroColaboradores.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/hospital/imagens/cadastrar.png"))); // NOI18N
         menuCadastroColaboradores.setText("Cadastrar");
@@ -110,6 +145,10 @@ public class TelaPrincipal extends javax.swing.JFrame {
         menuFerramentas.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/hospital/imagens/ferramentas.png"))); // NOI18N
         menuFerramentas.setText("Ferramentas     ");
         menuFerramentas.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+
+        jMenuItem1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/hospital/imagens/lista_all.png"))); // NOI18N
+        jMenuItem1.setText("Exibir Lista");
+        menuFerramentas.add(jMenuItem1);
 
         menuOrdenar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/hospital/imagens/ordernar.png"))); // NOI18N
         menuOrdenar.setText("Ordenar Pacientes");
@@ -155,11 +194,11 @@ public class TelaPrincipal extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 900, Short.MAX_VALUE)
+            .addComponent(menuInterno)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 429, Short.MAX_VALUE)
+            .addComponent(menuInterno)
         );
 
         pack();
@@ -168,6 +207,9 @@ public class TelaPrincipal extends javax.swing.JFrame {
 
     private void menuCadastroPacientesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuCadastroPacientesActionPerformed
         // TODO add your handling code here:
+        CadastroPaciente cadPaciente = new CadastroPaciente();
+        menuInterno.add(cadPaciente);
+        cadPaciente.setVisible(true);
     }//GEN-LAST:event_menuCadastroPacientesActionPerformed
 
     private void encerrarSistemaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_encerrarSistemaActionPerformed
@@ -182,19 +224,18 @@ public class TelaPrincipal extends javax.swing.JFrame {
         dispose();
     }//GEN-LAST:event_trocarUsuarioActionPerformed
 
-    private void menuListaPacientesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuListaPacientesActionPerformed
-        // TODO add your handling code here:
-        ListaPaciente listaPacientes = new ListaPaciente();
-        listaPacientes.setVisible(true);
-    }//GEN-LAST:event_menuListaPacientesActionPerformed
-
     private void menuCadastroColaboradoresActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuCadastroColaboradoresActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_menuCadastroColaboradoresActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JMenuItem encerrarSistema;
+    private javax.swing.JInternalFrame jInternalFrame1;
+    private javax.swing.JLayeredPane jLayeredPane1;
     private javax.swing.JMenuBar jMenuBar1;
+    private javax.swing.JMenuItem jMenuItem1;
+    private javax.swing.JPopupMenu jPopupMenu1;
+    private javax.swing.JTabbedPane jTabbedPane1;
     private javax.swing.JMenuItem menuCadastroColaboradores;
     private javax.swing.JMenuItem menuCadastroPacientes;
     private javax.swing.JMenu menuCadastros;
@@ -204,12 +245,12 @@ public class TelaPrincipal extends javax.swing.JFrame {
     private javax.swing.JMenuItem menuExcluirColaboradores;
     private javax.swing.JMenuItem menuExcluirPacientes;
     private javax.swing.JMenu menuFerramentas;
-    private javax.swing.JMenuItem menuListaColaboradores;
-    private javax.swing.JMenuItem menuListaPacientes;
+    private javax.swing.JDesktopPane menuInterno;
     private javax.swing.JMenu menuOpcao;
     private javax.swing.JMenuItem menuOrdenar;
     private javax.swing.JMenu menuPacientes;
     private javax.swing.JMenu menuProntuarios;
+    private javax.swing.JLabel planoFundo;
     private javax.swing.JMenuItem trocarUsuario;
     // End of variables declaration//GEN-END:variables
 }
