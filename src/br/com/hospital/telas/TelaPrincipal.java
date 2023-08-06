@@ -1,10 +1,12 @@
 package br.com.hospital.telas;
 
-import br.com.hospital.telas.paciente.CadastroPaciente;
-import br.com.hospital.telas.paciente.ListaPaciente;
+import br.com.hospital.telas.paciente.*;
+import java.io.File;
+import javax.swing.ImageIcon;
+import javax.swing.JFileChooser;
 
 public class TelaPrincipal extends javax.swing.JFrame {
-
+    
     public TelaPrincipal() {
         initComponents();
         setExtendedState(MAXIMIZED_BOTH);
@@ -33,6 +35,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
         menuFerramentas = new javax.swing.JMenu();
         jMenuItem1 = new javax.swing.JMenuItem();
         menuOrdenar = new javax.swing.JMenuItem();
+        menuPlanoFundo = new javax.swing.JMenuItem();
         menuProntuarios = new javax.swing.JMenu();
         menuOpcao = new javax.swing.JMenu();
         trocarUsuario = new javax.swing.JMenuItem();
@@ -68,7 +71,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
         setMinimumSize(new java.awt.Dimension(900, 450));
         setResizable(false);
 
-        planoFundo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/hospital/imagens/plano_fundo_2.png"))); // NOI18N
+        planoFundo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/hospital/imagens/plano_fundo_3.png"))); // NOI18N
 
         javax.swing.GroupLayout menuInternoLayout = new javax.swing.GroupLayout(menuInterno);
         menuInterno.setLayout(menuInternoLayout);
@@ -155,6 +158,15 @@ public class TelaPrincipal extends javax.swing.JFrame {
         menuOrdenar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         menuFerramentas.add(menuOrdenar);
 
+        menuPlanoFundo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/hospital/imagens/wallpaper.png"))); // NOI18N
+        menuPlanoFundo.setText("Plano de Fundo");
+        menuPlanoFundo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                menuPlanoFundoActionPerformed(evt);
+            }
+        });
+        menuFerramentas.add(menuPlanoFundo);
+
         jMenuBar1.add(menuFerramentas);
 
         menuProntuarios.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/hospital/imagens/prontuario.png"))); // NOI18N
@@ -228,6 +240,20 @@ public class TelaPrincipal extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_menuCadastroColaboradoresActionPerformed
 
+    private void menuPlanoFundoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuPlanoFundoActionPerformed
+        // TODO add your handling code here:
+        JFileChooser chooser = new JFileChooser();
+        int result = chooser.showOpenDialog(this);
+
+        if (result == JFileChooser.APPROVE_OPTION) {
+            File selectedFile = chooser.getSelectedFile();
+            String imagePath = selectedFile.getAbsolutePath();
+
+            ImageIcon imageIcon = new ImageIcon(imagePath);
+            planoFundo.setIcon(imageIcon);
+        }
+    }//GEN-LAST:event_menuPlanoFundoActionPerformed
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JMenuItem encerrarSistema;
     private javax.swing.JInternalFrame jInternalFrame1;
@@ -249,6 +275,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
     private javax.swing.JMenu menuOpcao;
     private javax.swing.JMenuItem menuOrdenar;
     private javax.swing.JMenu menuPacientes;
+    private javax.swing.JMenuItem menuPlanoFundo;
     private javax.swing.JMenu menuProntuarios;
     private javax.swing.JLabel planoFundo;
     private javax.swing.JMenuItem trocarUsuario;
