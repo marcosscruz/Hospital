@@ -1,18 +1,16 @@
 package br.com.hospital.telas;
 
-import br.com.hospital.colaboradores.Usuario;
-import java.util.ArrayList;
+import br.com.hospital.sistema.ManipuladorJson;
+
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JOptionPane;
+import org.json.simple.parser.ParseException;
 
 public class TelaLogin extends javax.swing.JFrame {
 
-    private ArrayList<Usuario> usuarioDataBase;
 
     public TelaLogin() {
-        // Inicializa o banco de dados de usuários com um usuário de exemplo
-        usuarioDataBase = new ArrayList<>();
-        usuarioDataBase.add(new Usuario("login", "senha"));
-
         initComponents();
     }
 
@@ -115,27 +113,25 @@ public class TelaLogin extends javax.swing.JFrame {
 
         if (nomeUser.isEmpty() || senhaUser.length == 0) {
             JOptionPane.showMessageDialog(TelaLogin.this, "Preencha todos os campos!");
+            return; // Saia do método para evitar a verificação com campos vazios
         }
-
-        boolean autiticado = false;
-        for (Usuario usuario : usuarioDataBase) {
-            if (usuario.getNomeUsuario().equals(nomeUser) && usuario.getSenhaUsuario().equals(new String(senhaUser))) {
-                autiticado = true;
-                break;
-            }
+    
+        ManipuladorJson json = null; 
+        try {
+            json = new ManipuladorJson(); // Crie uma instância da classe
+        } catch (ParseException ex) {
+            Logger.getLogger(TelaLogin.class.getName()).log(Level.SEVERE, null, ex);
         }
-
-        if (autiticado) {
+        if (json.verificarCredenciais(nomeUser, new String(senhaUser))) {
             TelaPrincipal principal = new TelaPrincipal();
             principal.setVisible(true);
-
+    
             setVisible(false);
             dispose();
         } else {
-            JOptionPane.showMessageDialog(TelaLogin.this, "Usuário ou Senha inconrretos!");
+            JOptionPane.showMessageDialog(TelaLogin.this, "Usuário ou Senha incorretos!");
         }
     }//GEN-LAST:event_loginButtonActionPerformed
-
 
     private void sairButtonActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_sairButtonActionPerformed
         // TODO add your handling code here:
