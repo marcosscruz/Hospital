@@ -71,7 +71,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
         setMinimumSize(new java.awt.Dimension(900, 450));
         setResizable(false);
 
-        planoFundo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/hospital/imagens/plano_fundo_3.png"))); // NOI18N
+        planoFundo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/hospital/imagens/plano_fundo_2.png"))); // NOI18N
 
         javax.swing.GroupLayout menuInternoLayout = new javax.swing.GroupLayout(menuInterno);
         menuInterno.setLayout(menuInternoLayout);

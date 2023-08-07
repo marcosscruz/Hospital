@@ -315,7 +315,7 @@
         <Component class="javax.swing.JLabel" name="planoFundo">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="3" name="/br/com/hospital/imagens/plano_fundo_3.png"/>
+              <Image iconType="3" name="/br/com/hospital/imagens/plano_fundo_2.png"/>
             </Property>
           </Properties>
         </Component>

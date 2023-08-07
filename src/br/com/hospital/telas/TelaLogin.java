@@ -1,16 +1,33 @@
 package br.com.hospital.telas;
 
 import br.com.hospital.sistema.ManipuladorJson;
+import java.awt.event.ActionEvent;
 
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.AbstractAction;
+import javax.swing.ActionMap;
+import javax.swing.InputMap;
+import javax.swing.JComponent;
 import javax.swing.JOptionPane;
+import javax.swing.KeyStroke;
 import org.json.simple.parser.ParseException;
 
 public class TelaLogin extends javax.swing.JFrame {
 
-
     public TelaLogin() {
+
+        // Configurar o botão "Login" como botão padrão para Enter
+        InputMap inputMap = rootPane.getInputMap(JComponent.WHEN_IN_FOCUSED_WINDOW);
+        ActionMap actionMap = rootPane.getActionMap();
+        inputMap.put(KeyStroke.getKeyStroke("ENTER"), "pressLoginButton");
+        actionMap.put("pressLoginButton", new AbstractAction() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                loginButtonActionPerformed(e);
+            }
+        });
+
         initComponents();
     }
 
@@ -33,8 +50,8 @@ public class TelaLogin extends javax.swing.JFrame {
         setBackground(new java.awt.Color(204, 255, 255));
         setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         setLocation(new java.awt.Point(0, 0));
-        setMaximumSize(new java.awt.Dimension(500, 250));
-        setMinimumSize(new java.awt.Dimension(500, 250));
+        setMaximumSize(new java.awt.Dimension(430, 220));
+        setMinimumSize(new java.awt.Dimension(430, 220));
         setResizable(false);
 
         logoPequena.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/hospital/imagens/logo_login.png"))); // NOI18N
@@ -43,7 +60,7 @@ public class TelaLogin extends javax.swing.JFrame {
 
         textSenha.setText("Senha:");
 
-        sairButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/hospital/imagens/sair_sistema.png"))); // NOI18N
+        sairButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/hospital/imagens/icon_sair_login.png"))); // NOI18N
         sairButton.setText("Sair");
         sairButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         sairButton.addActionListener(new java.awt.event.ActionListener() {
@@ -52,7 +69,7 @@ public class TelaLogin extends javax.swing.JFrame {
             }
         });
 
-        loginButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/hospital/imagens/entrar_sistema.png"))); // NOI18N
+        loginButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/hospital/imagens/icon_entrar_login.png"))); // NOI18N
         loginButton.setText("Entrar");
         loginButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -68,16 +85,19 @@ public class TelaLogin extends javax.swing.JFrame {
                 .addGap(54, 54, 54)
                 .addComponent(logoPequena)
                 .addGap(59, 59, 59)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(textLogin)
-                    .addComponent(usuarioLogin)
-                    .addComponent(textSenha)
-                    .addComponent(usuarioSenha)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addComponent(loginButton, javax.swing.GroupLayout.PREFERRED_SIZE, 82, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(sairButton, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(51, Short.MAX_VALUE))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(loginButton)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 16, Short.MAX_VALUE)
+                        .addComponent(sairButton, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(usuarioLogin, javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(usuarioSenha, javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(textLogin)
+                            .addComponent(textSenha))
+                        .addGap(0, 0, Short.MAX_VALUE)))
+                .addGap(31, 31, 31))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -99,7 +119,7 @@ public class TelaLogin extends javax.swing.JFrame {
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(sairButton)
                             .addComponent(loginButton))))
-                .addContainerGap(81, Short.MAX_VALUE))
+                .addContainerGap(51, Short.MAX_VALUE))
         );
 
         pack();
@@ -115,8 +135,8 @@ public class TelaLogin extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(TelaLogin.this, "Preencha todos os campos!");
             return; // Saia do método para evitar a verificação com campos vazios
         }
-    
-        ManipuladorJson json = null; 
+
+        ManipuladorJson json = null;
         try {
             json = new ManipuladorJson(); // Crie uma instância da classe
         } catch (ParseException ex) {
@@ -125,7 +145,7 @@ public class TelaLogin extends javax.swing.JFrame {
         if (json.verificarCredenciais(nomeUser, new String(senhaUser))) {
             TelaPrincipal principal = new TelaPrincipal();
             principal.setVisible(true);
-    
+
             setVisible(false);
             dispose();
         } else {

@@ -14,10 +14,10 @@
       <Point value="[0, 0]"/>
     </Property>
     <Property name="maximumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
-      <Dimension value="[500, 250]"/>
+      <Dimension value="[430, 220]"/>
     </Property>
     <Property name="minimumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
-      <Dimension value="[500, 250]"/>
+      <Dimension value="[430, 220]"/>
     </Property>
     <Property name="resizable" type="boolean" value="false"/>
   </Properties>
@@ -44,18 +44,23 @@
               <EmptySpace min="-2" pref="54" max="-2" attributes="0"/>
               <Component id="logoPequena" min="-2" max="-2" attributes="0"/>
               <EmptySpace min="-2" pref="59" max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                  <Component id="textLogin" min="-2" max="-2" attributes="0"/>
-                  <Component id="usuarioLogin" max="32767" attributes="0"/>
-                  <Component id="textSenha" min="-2" max="-2" attributes="0"/>
-                  <Component id="usuarioSenha" alignment="0" max="32767" attributes="0"/>
+              <Group type="103" groupAlignment="1" attributes="0">
                   <Group type="102" alignment="1" attributes="0">
-                      <Component id="loginButton" min="-2" pref="82" max="-2" attributes="0"/>
-                      <EmptySpace max="-2" attributes="0"/>
-                      <Component id="sairButton" min="-2" pref="80" max="-2" attributes="0"/>
+                      <Component id="loginButton" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace pref="16" max="32767" attributes="0"/>
+                      <Component id="sairButton" min="-2" pref="91" max="-2" attributes="0"/>
+                  </Group>
+                  <Component id="usuarioLogin" alignment="0" max="32767" attributes="0"/>
+                  <Component id="usuarioSenha" alignment="0" max="32767" attributes="0"/>
+                  <Group type="102" alignment="0" attributes="0">
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Component id="textLogin" min="-2" max="-2" attributes="0"/>
+                          <Component id="textSenha" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                   </Group>
               </Group>
-              <EmptySpace pref="51" max="32767" attributes="0"/>
+              <EmptySpace min="31" pref="31" max="-2" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -83,7 +88,7 @@
                       </Group>
                   </Group>
               </Group>
-              <EmptySpace pref="81" max="32767" attributes="0"/>
+              <EmptySpace pref="51" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -113,7 +118,7 @@
     <Component class="javax.swing.JButton" name="sairButton">
       <Properties>
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="3" name="/br/com/hospital/imagens/sair_sistema.png"/>
+          <Image iconType="3" name="/br/com/hospital/imagens/icon_sair_login.png"/>
         </Property>
         <Property name="text" type="java.lang.String" value="Sair"/>
         <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
@@ -127,7 +132,7 @@
     <Component class="javax.swing.JButton" name="loginButton">
       <Properties>
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="3" name="/br/com/hospital/imagens/entrar_sistema.png"/>
+          <Image iconType="3" name="/br/com/hospital/imagens/icon_entrar_login.png"/>
         </Property>
         <Property name="text" type="java.lang.String" value="Entrar"/>
       </Properties>
