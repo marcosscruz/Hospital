@@ -7,7 +7,7 @@ public abstract class Pessoa {
 
     private String nome;
     private String sobrenome;
-    private int idade;
+    private String dataNascimento;
     private String cpf;
 
     /**
@@ -15,13 +15,13 @@ public abstract class Pessoa {
      *
      * @param nome O nome da pessoa.
      * @param sobrenome O sobrenome da pessoa.
-     * @param idade A idade da pessoa
+     * @param dataNascimento A data de nascimento da pessoa
      * @param cpf O CPF da pessoa.
      */
-    public Pessoa(String nome, String sobrenome, int idade, String cpf) {
+    public Pessoa(String nome, String sobrenome, String dataNascimento, String cpf) {
         this.nome = nome;
         this.sobrenome = sobrenome;
-        this.idade = idade;
+        this.dataNascimento = dataNascimento;
         this.cpf = cpf;
     }
 
@@ -62,21 +62,21 @@ public abstract class Pessoa {
     }
     
     /**
-     * Método para obter a idade da pessoa.
+     * Método para obter a data de nascimento da pessoa.
      * 
-     * @return A idade da pessoa.
+     * @return A data de nascimento da pessoa.
      */
-    public int getIdade(){
-        return idade;
+    public String getDataNascimento(){
+        return dataNascimento;
     }
     
     /**
-     * Método para definir a idade da pessoa.
+     * Método para definir a data de nascimento da pessoa.
      * 
-     * @param idade A idade da pessoa a ser definida.
+     * @param dataNascimento A data de nascimento da pessoa a ser definida.
      */
-    public void setIdade(int idade){
-        this.idade = idade;
+    public void setDataNascimento(String dataNascimento){
+        this.dataNascimento = dataNascimento;
     }
 
     /**

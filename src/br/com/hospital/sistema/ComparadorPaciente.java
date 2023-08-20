@@ -41,7 +41,7 @@ public class ComparadorPaciente implements Comparator<Paciente> {
             case "idade":
                 return Integer.compare(p1.getIdade(), p2.getIdade());
             case "comorbidade":
-                return p1.getComorbidade().compareTo(p2.getComorbidade());
+                return p1.getHistoricoMedico().compareTo(p2.getHistoricoMedico());
             case "nomeSobrenome":
                 int resultadoNome = p1.getNome().compareTo(p2.getNome());
                 if (resultadoNome != 0) {

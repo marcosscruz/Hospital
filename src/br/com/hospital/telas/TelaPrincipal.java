@@ -38,6 +38,8 @@ public class TelaPrincipal extends javax.swing.JFrame {
         menuPlanoFundo = new javax.swing.JMenuItem();
         menuProntuarios = new javax.swing.JMenu();
         menuOpcao = new javax.swing.JMenu();
+        menuGerenciarUser = new javax.swing.JMenu();
+        menuNovoUser = new javax.swing.JMenuItem();
         trocarUsuario = new javax.swing.JMenuItem();
         encerrarSistema = new javax.swing.JMenuItem();
 
@@ -178,6 +180,11 @@ public class TelaPrincipal extends javax.swing.JFrame {
         menuOpcao.setText("Opções");
         menuOpcao.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
 
+        menuGerenciarUser.setText("Gerênciar Usuário");
+
+        menuNovoUser.setText("Novo Usuário");
+        menuGerenciarUser.add(menuNovoUser);
+
         trocarUsuario.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/hospital/imagens/trocar_usuario.png"))); // NOI18N
         trocarUsuario.setText("Trocar de usuário");
         trocarUsuario.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
@@ -186,7 +193,9 @@ public class TelaPrincipal extends javax.swing.JFrame {
                 trocarUsuarioActionPerformed(evt);
             }
         });
-        menuOpcao.add(trocarUsuario);
+        menuGerenciarUser.add(trocarUsuario);
+
+        menuOpcao.add(menuGerenciarUser);
 
         encerrarSistema.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/hospital/imagens/sair_sistema.png"))); // NOI18N
         encerrarSistema.setText("Encerrar Sistema");
@@ -217,6 +226,43 @@ public class TelaPrincipal extends javax.swing.JFrame {
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
+    
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String args[]) {
+        /* Set the Nimbus look and feel */
+        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
+        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
+         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
+         */
+        try {
+            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
+                if ("Windows".equals(info.getName())) {
+                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
+                    break;
+                }
+            }
+        } catch (ClassNotFoundException ex) {
+            java.util.logging.Logger.getLogger(TelaPrincipal.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (InstantiationException ex) {
+            java.util.logging.Logger.getLogger(TelaPrincipal.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (IllegalAccessException ex) {
+            java.util.logging.Logger.getLogger(TelaPrincipal.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
+            java.util.logging.Logger.getLogger(TelaPrincipal.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        }
+        //</editor-fold>
+
+        /* Create and display the form */
+        java.awt.EventQueue.invokeLater(new Runnable() {
+            public void run() {
+                new TelaPrincipal().setVisible(true);
+            }
+        });
+    }
+    
+    
     private void menuCadastroPacientesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuCadastroPacientesActionPerformed
         // TODO add your handling code here:
         CadastroPaciente cadPaciente = new CadastroPaciente();
@@ -271,7 +317,9 @@ public class TelaPrincipal extends javax.swing.JFrame {
     private javax.swing.JMenuItem menuExcluirColaboradores;
     private javax.swing.JMenuItem menuExcluirPacientes;
     private javax.swing.JMenu menuFerramentas;
+    private javax.swing.JMenu menuGerenciarUser;
     private javax.swing.JDesktopPane menuInterno;
+    private javax.swing.JMenuItem menuNovoUser;
     private javax.swing.JMenu menuOpcao;
     private javax.swing.JMenuItem menuOrdenar;
     private javax.swing.JMenu menuPacientes;
