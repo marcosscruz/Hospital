@@ -1,2 +1,2 @@
 # Hospital
- Durante 14 dias (iniciei me 01/08), me desafiei a criar um sistema simples para um hospital em Java.
+ For 14 days, I challenged myself to create a simple system for a hospital in Java.
